@@ -1,1 +1,216 @@
-  huhu
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            fon-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 9px solid #dddddd;
+            text-align: left;
+            padding: 5px;
+        }
+    </style>
+
+    <script language="javascript" type="text/javascript">
+
+
+        function Button1_onclick() {
+            var a = document.getElementById("c01").value;
+            var b = document.getElementById("c03").value;
+            if (a == "") {
+                alert("你尚未填寫姓名");
+            }
+           
+           if (isNaN(b) == false) {
+                alert("電話不是數字");
+
+            }
+
+
+        }
+
+        function Button2_onclick() {
+            var patient = { "name": "Chalmers", "telecom": 12345678, "gender": "male", "birthDate": "1974-12-25" };
+            document.getElementById("c01").value = patient.name;
+            document.getElementById("c03").value = patient.telecom;
+            document.getElementById("c02").value = patient.birthDate;
+            var d = document.getElementsByName("性別");
+            for (var i = 0; i < d.length; i++) {
+                if (d[i].value == patient.gender) {
+                    d[i].checked = true;
+                }
+                else {
+                    d[i].checked = false;
+                }
+
+            }
+        }
+        function Button3_onclick() {
+            var a = document.getElementById("c01").value;
+            var b = document.getElementById("c03").value;
+            var c = document.getElementById("c02").value;
+            var d;
+            var z = document.getElementsByName("性別");
+            for (var i = 0; i < z.length; i++) {
+                if (z[i].checked == true) {
+                    d = z[i].value;
+                }
+            }
+            alert("姓名:" + a + ",電話:" + b + ",生日:" + c + ",性別:" + d);
+        }
+    </script>
+
+</head>
+
+<body ">
+    <form id="orderForm1" action="http://203.64.84.113/x/RQ_RS.aspx" method="post" name="form1">
+
+        <h1 style="text-align:center;">眼科就診表單</h1>
+        <table style="width:100%">
+            <tr>
+                <td>姓名:<input id="c01" type="text" name="名字" size="10"></td>
+                <td>性別:  <select id="c04" name="gender"><option value="女">女</option><option value="男">男</option></td>
+
+            </tr>
+            <tr>
+                <td>年齡:<input  type="text" name="年齡" size="10"</td>
+                <td>生日:<input  id ="c02" type="text" name="生日" size="10"</td>
+
+
+            </tr>
+            <tr>
+                <td>入院時間:<input  type="text" name="入院時間" size="10"></td>
+                <td>婚姻:<select na me="gender"><option value="已婚">已婚</option><option value="未婚">未婚</option></td>
+
+            </tr>
+            <tr>
+                <td>出生地:<input  type="text" name="出生地" size="8"></td>
+                <td>戶籍地址:<input type="text" name="戶籍地址" size="25"></td>
+
+            </tr>
+            <tr>
+                <td>行動電話:<input id="c03" type="text" name="行動電話" size="15"></td>
+                <td>
+                    居住電話:<input id="c03" type="text" name="居住電話" size="15">
+                    <button type="button" onclick="Button1_onclick()">檢查</button>
+                    <button type="button" onclick="Button2_onclick()">給值</button>
+                    <button type="button" onclick="Button3_onclick()">呈現</button>
+                </td>
+
+            </tr>
+        </table>
+        <table style="width:100%">
+            <tr>
+                <td>現病史:<input type="text" name="現病史" size="30"></td>
+                <td>既往病史:<input  type="text" name="既往病史" size="30"></td>
+                <td>傳染病史:<input type="text" name="傳染病史" size="30"></td>
+            </tr>
+            <tr>
+                <td>過敏病史:<input  type="text" name="過敏病史" size="30"></td>
+                <td>手術病史:<input  type="text" name="手術病史" size="30"></td>
+                <td>家族病史:<input type="text" name="家族病史" size="30"></td>
+
+            </tr>
+            <tr>
+                <td>
+                    <form>
+                        月經: <input type="radio" name="月經" value="是" checked> 是
+                        <input type="radio" name="月經" value="否">否
+                </td>
+
+                <td>
+                    <form>
+                        嗜菸: <input type="radio" name="嗜菸" value="是" checked> 是
+                        <input type="radio" name="嗜菸" value="否">否
+                </td>
+                <td>
+                    <form>
+                        嗜酒: <input type="radio" name="嗜酒" value="是" checked> 是
+                        <input type="radio" name="嗜酒" value="否">否
+                </td>
+
+            </tr>
+        </table>
+        <table style="width:100%">
+            <tr>
+                <td>
+                    右眼視力:<input  type="text" name="右眼視力" size="18"><br>
+                    <br>
+                    右眼矯正視力:<input  type="text" name="右眼矯正視力" size="18">
+                </td>
+                <td>
+                    左眼視力:<input  type="text" name="左眼視力" size="18"><br>
+                    <br>
+                    左眼矯正視力:<input  type="text" name="左眼矯正視力" size="18">
+                </td>
+            </tr>
+        </table>
+        <table style="width:100%">
+            <tr>
+                <td><h2 style="text-align:center;">眼部異處</h2></td>
+            </tr>
+
+            <table style="width:100%">
+                <tr>
+                    <td><input type="checkbox" name="眼部異處1" value="角膜">角膜</td>
+                    <td><input type="checkbox" name="眼部異處2" value="瞳孔">瞳孔</td>
+                    <td><input type="checkbox" name="眼部異處3" value="前房">前房</td>
+                    <td><input type="checkbox" name="眼部異處4" value="晶狀體">晶狀體</td>
+                </tr>
+                <tr>
+
+                    <td><input type="checkbox" name="眼部異處5" value="玻璃體">玻璃體</td>
+                    <td><input type="checkbox" name="眼部異處6" value="虹膜">虹膜</td>
+                    <td><input type="checkbox" name="眼部異處7" value="眼瞼">眼瞼</td>
+                    <td><input type="checkbox" name="眼部異處8" value="眼壓">眼壓</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <input type="checkbox" name="眼部異處9" value="球結膜">球結膜
+                    </td>
+                    <td><input type="checkbox" name="眼部異處10" value="光辨向 色覺">光辨向 色覺</td>
+                    <td><input type="checkbox" name="眼部異處11" value="玻璃體">玻璃體</td>
+                    <td><input type="checkbox" name=眼部異處12" value="結膜">結膜</td>
+
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td><input type="checkbox" name="眼部異處13" value="淚器">淚器</td>
+                    <td><input type="checkbox" name="眼部異處14" value="恐膜">恐膜</td>
+                    <td><input type="checkbox" name="眼部異處15" value="眼內壓">眼內壓</td>
+                    <td><input type="checkbox" name="眼部異處16" value="光感">光感</td>
+
+                </tr>
+                </tr>
+                <tr>
+
+                    <td><input type="checkbox" name="眼部異處17" value="散光軸">散光軸</td>
+                    <td><input type="checkbox" name="眼部異處18" value="球面鏡">球面鏡</td>
+                    <td><input type="checkbox" name="眼部異處19" value="凸透鏡">凸透鏡</td>
+                    <td>
+                        <input type="checkbox" name="眼部異處20" value="其他">其他
+                        <input type="text" name="其他" value="">
+                    </td>
+
+                </tr>
+
+            </table>
+            <br></br>
+            <center> <button type="submit" value="sssss" style="height: 29px; width: 103px">送出</button> </center>
+
+        </table>
+
+        <h3 style="text-align:center;">填表完成後請按送出</h3>
+        <h3 style="text-align:center;">有任何問題請撥打xx醫院電話(02)123xxx78。</h3>
+    </form>
+
+</body>
+
+</html>
