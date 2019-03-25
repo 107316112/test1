@@ -21,22 +21,21 @@
         function Button1_onclick() {
             var a = document.getElementById("c01").value;
             var b = document.getElementById("c03").value;
-          if (a == "") {
+            if (a == "") {
                 alert("你尚未填寫姓名");
             }
-           
+
            if (isNaN(b) == false) {
-                alert("電話不是數字");
+                alert("行動電話不是數字");
 
             }
-             
-         }
+           }
 
         function Button2_onclick() {
-            var patient = { "name": "Chalmers", "telecom": 12345678, "gender": "male", "birthDate": "1974-12-25" };
+            var patient = { "name": "Chalmers", "telecom": 12345678, "gender": "male", "birthDate": "1974-12-25"};
             document.getElementById("c01").value = patient.name;
             document.getElementById("c03").value = patient.telecom;
-          
+
             document.getElementById("c02").value = patient.birthDate;
             var d = document.getElementsByName("性別");
             for (var i = 0; i < d.length; i++) {
@@ -46,8 +45,7 @@
                 else {
                     d[i].checked = false;
                 }
-            
-                
+
             }
         }
         function Button3_onclick() {
@@ -60,9 +58,8 @@
                 if (z[i].checked == true) {
                     d = z[i].value;
                 }
-            
             }
-            alert("姓名:" + a + ",行動電話:" + b + ",生日:" + c + ",性別:" + d);
+            alert("姓名:" + a + ",電話:" + b + ",生日:" + c + ",性別:" + d );
         }
     </script>
 
@@ -79,18 +76,18 @@
 
             </tr>
             <tr>
-                <td>年齡:<input  type="text" name="年齡" size="10"</td>
-                <td>生日:<input  id ="c02" type="text" name="生日" size="10"</td>
+                <td>年齡:<input type="text" name="年齡" size="10"</td>
+                <td>生日:<input id="c02" type="text" name="生日" size="10"</td>
 
 
             </tr>
             <tr>
-                <td>入院時間:<input  type="text" name="入院時間" size="10"></td>
+                <td>入院時間:<input type="text" name="入院時間" size="10"></td>
                 <td>婚姻:<select na me="gender"><option value="已婚">已婚</option><option value="未婚">未婚</option></td>
 
             </tr>
             <tr>
-                <td>出生地:<input  type="text" name="出生地" size="8"></td>
+                <td>出生地:<input type="text" name="出生地" size="8"></td>
                 <td>戶籍地址:<input type="text" name="戶籍地址" size="25"></td>
 
             </tr>
@@ -108,12 +105,12 @@
         <table style="width:100%">
             <tr>
                 <td>現病史:<input type="text" name="現病史" size="30"></td>
-                <td>既往病史:<input  type="text" name="既往病史" size="30"></td>
+                <td>既往病史:<input type="text" name="既往病史" size="30"></td>
                 <td>傳染病史:<input type="text" name="傳染病史" size="30"></td>
             </tr>
             <tr>
-                <td>過敏病史:<input  type="text" name="過敏病史" size="30"></td>
-                <td>手術病史:<input  type="text" name="手術病史" size="30"></td>
+                <td>過敏病史:<input type="text" name="過敏病史" size="30"></td>
+                <td>手術病史:<input type="text" name="手術病史" size="30"></td>
                 <td>家族病史:<input type="text" name="家族病史" size="30"></td>
 
             </tr>
@@ -140,14 +137,14 @@
         <table style="width:100%">
             <tr>
                 <td>
-                    右眼視力:<input  type="text" name="右眼視力" size="18"><br>
+                    右眼視力:<input type="text" name="右眼視力" size="18"><br>
                     <br>
-                    右眼矯正視力:<input  type="text" name="右眼矯正視力" size="18">
+                    右眼矯正視力:<input type="text" name="右眼矯正視力" size="18">
                 </td>
                 <td>
-                    左眼視力:<input  type="text" name="左眼視力" size="18"><br>
+                    左眼視力:<input type="text" name="左眼視力" size="18"><br>
                     <br>
-                    左眼矯正視力:<input  type="text" name="左眼矯正視力" size="18">
+                    左眼矯正視力:<input type="text" name="左眼矯正視力" size="18">
                 </td>
             </tr>
         </table>
