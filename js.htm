@@ -21,21 +21,26 @@
         function Button1_onclick() {
             var a = document.getElementById("c01").value;
             var b = document.getElementById("c03").value;
+            var e = document.getElementById("c05").value;
             if (a == "") {
                 alert("你尚未填寫姓名");
             }
 
            if (isNaN(b) == false) {
-                alert("電話不是數字");
+                alert("行動電話不是數字");
 
-            }
+           }
+           if (isNaN(e) == false) {
+               alert("室內電話不是數字");
+
+           }
            }
 
         function Button2_onclick() {
-            var patient = { "name": "Chalmers", "telecom": 12345678, "gender": "male", "birthDate": "1974-12-25"};
+            var patient = { "name": "Chalmers", "telecom": 12345678, "gender": "male", "birthDate": "1974-12-25", "cell": 12345678 };
             document.getElementById("c01").value = patient.name;
             document.getElementById("c03").value = patient.telecom;
-
+            document.getElementById("c05").value = patient.cell;
             document.getElementById("c02").value = patient.birthDate;
             var d = document.getElementsByName("性別");
             for (var i = 0; i < d.length; i++) {
@@ -51,6 +56,7 @@
         function Button3_onclick() {
             var a = document.getElementById("c01").value;
             var b = document.getElementById("c03").value;
+            var e = document.getElementById("c05").value;
             var c = document.getElementById("c02").value;
             var d;
             var z = document.getElementsByName("性別");
@@ -59,7 +65,7 @@
                     d = z[i].value;
                 }
             }
-            alert("姓名:" + a + ",電話:" + b + ",生日:" + c + ",性別:" + d );
+            alert("姓名:" + a + ",行動電話:" + b + ",生日:" + c + ",性別:" + d + ",室內電話:" + e);
         }
     </script>
 
@@ -72,7 +78,10 @@
         <table style="width:100%">
             <tr>
                 <td>姓名:<input id="c01" type="text" name="名字" size="10"></td>
-                <td>性別:  <select id="c04" name="gender"><option value="女">女</option><option value="男">男</option></td>
+                <td><form>
+    性別: <input  type="radio" name="性別" value="女" checked>女
+    <input type="radio" name="性別" value="男">男
+</td>
 
             </tr>
             <tr>
