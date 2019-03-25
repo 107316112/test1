@@ -72,7 +72,7 @@
 
 </head>
 
-<body  onload = "Button5_onclick">
+<body  onload = "Button5_onclick()">
     <form id="orderForm1" action="http://203.64.84.113/x/RQ_RS.aspx" method="post" name="form1">
 
         <h1 style="text-align:center;">眼科就診表單</h1>
@@ -94,10 +94,9 @@
             <tr>
                 <td>入院時間:<input type="text" name="入院時間" size="10"></td>
                 <td>
-                    婚姻:<select id="g" name="婚姻">
-                        <option value="已婚">已婚</option>
-                        <option value="未婚">未婚</option>
-                        <br>
+                    婚姻:<select id="g" name="婚姻" >
+
+                        </select>
                       </td>
 
                 <script>
@@ -105,9 +104,12 @@
                     function Button5_onclick() {
                         var a = new Array("已婚","未婚");
                         var y = document.getElementById("g");
-                        for i = 0 , a.length
-                            y. innerhtml+="<Option value'"+ a[i] +  "</Option>";
+                        for (i = 0 ; i < a.length; i++) {
+                            var option = document.createElement("option");
+                            option.text = a[i];
+                            y.add(option);
                         }
+                       }
                 </script>
             </tr>
             <tr>
