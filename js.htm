@@ -21,26 +21,19 @@
         function Button1_onclick() {
             var a = document.getElementById("c01").value;
             var b = document.getElementById("c03").value;
-            var e= document.getElementById("c05").value;
-            
-            if (a == "") {
+          if (a == "") {
                 alert("你尚未填寫姓名");
             }
            
            if (isNaN(b) == false) {
-                alert("行動電話不是數字");
+                alert("電話不是數字");
 
             }
-             if (isNaN(e) == false) {
-                alert("室內電話不是數字");
-
-            }
-
-
-        }
+             
+         }
 
         function Button2_onclick() {
-            var patient = { "name": "Chalmers", "telecom": 12345678, "gender": "male", "birthDate": "1974-12-25"  "cell telecom": 12345678,};
+            var patient = { "name": "Chalmers", "telecom": 12345678, "gender": "male", "birthDate": "1974-12-25" };
             document.getElementById("c01").value = patient.name;
             document.getElementById("c03").value = patient.telecom;
           
@@ -53,7 +46,7 @@
                 else {
                     d[i].checked = false;
                 }
-             document.getElementById("c05").value = patient.cell telecom;
+            
                 
             }
         }
@@ -67,9 +60,9 @@
                 if (z[i].checked == true) {
                     d = z[i].value;
                 }
-            var e = document.getElementById("c05").value;  
+            
             }
-            alert("姓名:" + a + ",行動電話:" + b + ",生日:" + c + ",性別:" + d +",室內電話:" + e);
+            alert("姓名:" + a + ",行動電話:" + b + ",生日:" + c + ",性別:" + d);
         }
     </script>
 
