@@ -68,6 +68,9 @@
             alert("姓名:" + a + ",行動電話:" + b + ",生日:" + c + ",性別:" + d + ",室內電話:" + e);
         }
     </script>
+    
+       
+   
 </head>
 <body onload="Button5_onclick()">
     <form id="orderForm1" action="http://203.64.84.113/x/RQ_RS.aspx" method="post" name="form1">
@@ -161,7 +164,8 @@
                 </td>
                 <td>
                     身高(cm):<input id="v01" type="text" name="身高(cm)" size="18"><br>
-                    體重(kg):<input id="v02" type="text" name="體重(kg)" size="18"><br>
+                    <br>
+                    體重(kg):<input id="v02" type="text" name="體重(kg)" size="18">
                     <button type="button" onclick="Button4_onclick()">BMI</button>
                 </td>
                 <script>
@@ -183,69 +187,109 @@
             <tr>
                 <td><h2 style="text-align:center;">眼部異處(可複選)</h2></td>
             </tr>
-             
-                <table style="width:100%">
 
-                    <tr>
-                        <td><input type="checkbox" name="眼部異處" value="角膜">角膜</td>
-                        <td><input type="checkbox" name="眼部異處" value="瞳孔">瞳孔</td>
-                        <td><input type="checkbox" name="眼部異處" value="前房">前房</td>
-                        <td><input type="checkbox" name="眼部異處" value="晶狀體">晶狀體</td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="眼部異處" value="玻璃體">玻璃體</td>
-                        <td><input type="checkbox" name="眼部異處" value="虹膜">虹膜</td>
-                        <td><input type="checkbox" name="眼部異處" value="眼瞼">眼瞼</td>
-                        <td><input type="checkbox" name="眼部異處" value="眼壓">眼壓</td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="眼部異處" value="球結膜">球結膜
-                        </td>
-                        <td><input type="checkbox" name="眼部異處" value="光辨向 色覺">光辨向 色覺</td>
-                        <td><input type="checkbox" name="眼部異處" value="玻璃體">玻璃體</td>
-                        <td><input type="checkbox" name="眼部異處" value="結膜">結膜</td>
-                    </tr>
-                    <tr></tr>
-                    <tr>
-                        <td><input type="checkbox" name="眼部異處" value="淚器">淚器</td>
-                        <td><input type="checkbox" name="眼部異處" value="恐膜">恐膜</td>
-                        <td><input type="checkbox" name="眼部異處" value="眼內壓">眼內壓</td>
-                        <td><input type="checkbox" name="眼部異處" value="光感">光感</td>
-                    </tr>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox" name="眼部異處" value="散光軸">散光軸</td>
-                        <td><input type="checkbox" name="眼部異處" value="球面鏡">球面鏡</td>
-                        <td><input type="checkbox" name="眼部異處" value="凸透鏡">凸透鏡</td>
-                        <td>
-                            <input type="checkbox" name="眼部異處" value="其他">其他
-                            <input type="text" name="其他" value="">  <button type="button" onclick="Submit6_onclick()">呈現</button>
-                        </td>
+            <table style="width:100%">
+                
+                <tr>
+                    <td><input type="checkbox" name="眼部異處" value="角膜">角膜</td>
+                    <td><input type="checkbox" name="眼部異處" value="瞳孔">瞳孔</td>
+                    <td><input type="checkbox" name="眼部異處" value="前房">前房</td>
+                    <td><input type="checkbox" name="眼部異處" value="晶狀體">晶狀體</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="眼部異處" value="玻璃體">玻璃體</td>
+                    <td><input type="checkbox" name="眼部異處" value="虹膜">虹膜</td>
+                    <td><input type="checkbox" name="眼部異處" value="眼瞼">眼瞼</td>
+                    <td><input type="checkbox" name="眼部異處" value="眼壓">眼壓</td>
+                </tr>
+                <tr>
+                    <td>
+                    <input type="checkbox" name="眼部異處" value="球結膜">球結膜</td>
+                    <td><input type="checkbox" name="眼部異處" value="光辨向 色覺">光辨向 色覺</td>
+                    <td><input type="checkbox" name="眼部異處" value="凹透鏡">凹透鏡</td>
+                    <td><input type="checkbox" name="眼部異處" value="結膜">結膜</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td><input type="checkbox" name="眼部異處" value="淚器">淚器</td>
+                    <td><input type="checkbox" name="眼部異處" value="恐膜">恐膜</td>
+                    <td><input type="checkbox" name="眼部異處" value="眼內壓">眼內壓</td>
+                    <td><input type="checkbox" name="眼部異處" value="光感">光感</td>
+                </tr>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="眼部異處" value="散光軸">散光軸</td>
+                    <td><input type="checkbox" name="眼部異處" value="球面鏡">球面鏡</td>
+                    <td><input type="checkbox" name="眼部異處" value="凸透鏡">凸透鏡</td>
+                    <td>
+                        <input type="checkbox" name="眼部異處" value="其他">其他
+                        <input type="text" name="其他" value=""> 
+                    </td>
 
-                    </tr>
+                </tr>
 
-                </table>
-                <br></br>
-                <center> <button type="submit" value="sssss" style="height: 29px; width: 103px">送出</button> </center>
             </table>
-        <script>
-               function Submit6_onclick() {
-               var z = document.getElementsByName("眼部異處");
-               var y = new Array();
-                for (i = 0; i < 19;i++){
-                 if(z[i].checked==true)
-                     y += z[i].value;
+            <br></br>
+            <center> <button type="submit" value="sssss" style="height: 29px; width: 103px">送出</button> </center>
+        </table>
 
-                }
-                   alert(y)
-                 }
-        </script>
-         
+        <p>
+          
+            <input id="Button2" onclick="showData();" type="button" value="ShowData" />
+            <table id="t1" />
+        </p>
+        
 
-            <h3 style="text-align:center;">填表完成後請按送出</h3>
-            <h3 style="text-align:center;">有任何問題請撥打xx醫院電話(02)123xxx78。</h3>
-</form>
+
+        <h3 style="text-align:center;">填表完成後請按送出</h3>
+        <h3 style="text-align:center;">有任何問題請撥打xx醫院電話(02)123xxx78。</h3>
+    </form>
 </body>
+
+<script>
+   
+        
+    
+        function showData() {
+            var z = document.getElementsByName("眼部異處");
+            var y = new Array();
+            var n = 0
+            for (i = 0; i < 19; i++) {
+                if (z[i].checked == true)
+                    y[n] = z[i].value;
+                       n++;
+               
+
+            }
+            alert(y)
+        
+                // alert(ret);
+                // ret defined in HTTP2019.js for keep the response value
+                //var myObj = JSON.parse(ret);
+              //  alert(myObj.length);
+
+         //  var obj = JSON.parse('{"角膜": "", "瞳孔": "", "前房": "", "晶狀體": "", "玻璃體": "", "虹膜": "", "眼瞼": "", "眼壓": "", "球結膜": "", "光辨向 色覺": "", "凹透鏡": "", "結膜": "", "淚器": "", "恐膜": "", "眼內壓": "", "光感": "", "散光軸": "", "球面鏡": "", "凸透鏡": "", "其他": ""}');
+                var tableStr = "<tr><th>角膜</th> <th >瞳孔</th><th>前房</th><th>晶狀體</th><th>玻璃體</th><th>虹膜</th><th>眼瞼</th><th>眼壓</th><th>球結膜</th><th>光辨向 色覺</th><th>凹透鏡</th><th>結膜</th><th>淚器</th><th>恐膜</th><th>眼內壓</th><th>光感</th><th>散光軸</th><th>球面鏡</th><th>凸透鏡</th><th>其他</th></tr>";
+
+                for (i = 0; i < 19; i++) {
+                     // alert(myObj[i].name);
+                    var trStr = "<tr>";
+
+                    trStr = trStr + "<td>";
+                    trStr = trStr + y[i];
+                    trStr = trStr + "</td>";
+
+                   
+
+                    trStr = trStr + "</tr>";
+                    tableStr = tableStr + trStr;
+                }
+
+                // 表格字串字串在id為"t1"的"table"標簽内
+                document.getElementById("t1").innerHTML = tableStr;
+
+
+            }
+</script>
 
 </html>
