@@ -7,13 +7,13 @@
     <script src="HTTP2019.js"></script>
     <script>
        
-        var obj = JSON.parse('{"gender": "", "marital":"", "old":"", "satisfaction":"", "help":"", "food":"", "like":"", "":""}');
+        var obj = JSON.parse('{ "city":"","like":"","gender": "", "marital":"", "old":"", "satisfaction":"", "help":"", "food":"",  "":""}');
 
         function myFunction() {
            
 
-            obj.telecom = document.getElementById("d01").value;
-            obj.telecom = document.getElementById("g01").value;
+            obj.city = document.getElementById("d01").value;
+            obj.like = document.getElementById("g01").value;
 
             if (document.getElementById("male").checked == true) {
                 obj.gender = "女";
