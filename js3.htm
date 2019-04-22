@@ -1,1 +1,160 @@
-awdw
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+        <title>對此網站的意見調查表(不記名)</title>
+    <script src="HTTP2019.js"></script>
+    <script>
+       
+        var obj = JSON.parse('{"gender": "", "marital":"", "old":"", "satisfaction":"", "help":"", "food":"", "like":"", "":""}');
+
+        function myFunction() {
+           
+
+            obj.telecom = document.getElementById("d01").value;
+            obj.telecom = document.getElementById("g01").value;
+
+            if (document.getElementById("male").checked == true) {
+                obj.gender = "女";
+            }
+            if (document.getElementById("female").checked == true) {
+                obj.gender = "男";
+            }
+            if (document.getElementById("b01").checked == true) {
+                obj.marital = "是";
+            }
+            if (document.getElementById("b02").checked == true) {
+                obj.marital = "否";
+            }
+            if (document.getElementById("c01").checked == true) {
+                obj.old = "0~10歲";
+            }
+            if (document.getElementById("c02").checked == true) {
+                obj.old = "11~20歲";
+            }
+            if (document.getElementById("c03").checked == true) {
+                obj.old = "21~30歲";
+            }
+            if (document.getElementById("c04").checked == true) {
+                obj.old = "31~40歲";
+            }
+            if (document.getElementById("c05").checked == true) {
+                obj.old = "41~450歲";
+            }
+            if (document.getElementById("c06").checked == true) {
+                obj.old = "51~60歲";
+            }
+            if (document.getElementById("c07").checked == true) {
+                obj.old = "61~70歲";
+            }
+            if (document.getElementById("c08").checked == true) {
+                obj.old = "70歲以上";
+            }
+            if (document.getElementById("a01").checked == true) {
+                obj.satisfaction = "非常滿意";
+            }
+            if (document.getElementById("a02").checked == true) {
+                obj.satisfaction = "滿意";
+            }
+            if (document.getElementById("a03").checked == true) {
+                obj.satisfaction = "不滿意";
+            }
+            if (document.getElementById("a04").checked == true) {
+                obj.satisfaction = "非常不滿意";
+            }
+            if (document.getElementById("e01").checked == true) {
+                obj.help = "有";
+            }
+            if (document.getElementById("e02").checked == true) {
+                obj.help = "沒有";
+            }
+            if (document.getElementById("f01").checked == true) {
+                obj.food = "有";
+            }
+            if (document.getElementById("f02").checked == true) {
+                obj.food = "沒有";
+            }
+            var myJSONstr = JSON.stringify(obj);
+            //alert(myJSONstr);
+            //var encodedData = btoa(myJSONstr);
+            HTTPPostData("Post.aspx?id=newPatient", myJSONstr);
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>對此網站的意見調查表(不記名)</legend>
+
+        性別:<br />
+        <input type="radio" name="gender" value="女" id="male" />
+        女
+        <input type="radio" name="gender" value="男" id="female" />
+        男<br />
+        <br />
+        婚姻:<br />
+        <input type="radio" name="marital" value="是" id="b01" />
+        是
+        <input type="radio" name="marital" value="否" id="b02" />
+        否<br />
+        <br />
+        居住城市:<br />
+        <input type="text" id="d01" name="city" value="" /><br />
+        <br />
+        年齡層:<br />
+        <input type="radio" name="old" value="0~10歲" id="c01" />
+        0~10歲
+        <input type="radio" name="old" value="11~20歲" id="c02" />
+        11~20歲<br />
+        <input type="radio" name="old" value="21~30歲" id="c03" />
+        21~30歲
+        <input type="radio" name="old" value="31~40歲" id="c04" />
+        31~40歲<br />
+        <input type="radio" name="old" value="41~50歲" id="c05" />
+        41~50歲
+        <input type="radio" name="old" value="51~60歲" id="c06" />
+        51~60歲<br />
+        <input type="radio" name="old" value="61~70歲" id="c07" />
+        61~70歲
+        <input type="radio" name="old" value="70歲以上" id="c08" />
+        70歲以上<br />
+        <br /> 
+        請問對於該網站滿意嗎?<br />
+        <input type="radio" name="satisfaction" value="非常滿意" id="a01" />
+        非常滿意
+        <input type="radio" name="satisfaction" value="滿意" id="a02" />
+        滿意<br />
+        <input type="radio" name="satisfaction" value="不滿意" id="a03" />
+        不滿意
+        <input type="radio" name="satisfaction" value="非常不滿意" id="a04" />
+        非常不滿意<br />
+        <br />
+        此網站有幫助到您嗎?<br />
+        <input type="radio" name="help" value="有" id="e01" />
+        有<br />
+        <input type="radio" name="help" value="沒有" id="e02" />
+        沒有<br />
+        <br />
+        此網站有讓您更加了解台灣各地美食嗎?<br />
+        <input type="radio" name="food" value="有" id="f01" />
+        有<br />
+        <input type="radio" name="food" value="沒有" id="f02" />
+        沒有<br />
+        <br />
+        您最喜歡網站中哪個城市的在地美食?:<br />
+        <input type="text" id="g01" name="like" value="" /><br />
+        <br />
+
+
+
+
+
+    </fieldset>
+    <br />
+    <br />
+
+  
+    <button onclick="myFunction()">savePatientData</button>
+
+</body>
+</html>
