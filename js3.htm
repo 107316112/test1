@@ -2,19 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-        <title>對此網站的意見調查表(不記名)</title>
+
+    <title>對此網站的意見調查表(不記名)</title>
     <script src="HTTP2019.js"></script>
     <script>
-       
-        var obj = JSON.parse('{ "city":"","like":"","gender": "", "marital":"", "old":"", "satisfaction":"", "help":"", "food":"",  "":""}');
 
+        var obj = JSON.parse('{ "city":"","like":"","think":"","suggest": "","gender": "", "marital":"", "old":"", "satisfaction":"", "help":"", "food":""}');
         function myFunction() {
-           
 
             obj.city = document.getElementById("d01").value;
             obj.like = document.getElementById("g01").value;
-
+            obj.think = document.getElementById("g02").value;
+            obj.suggest = document.getElementById("g03").value;
             if (document.getElementById("male").checked == true) {
                 obj.gender = "女";
             }
@@ -118,8 +117,8 @@
         61~70歲
         <input type="radio" name="old" value="70歲以上" id="c08" />
         70歲以上<br />
-        <br /> 
-        請問對於該網站滿意嗎?<br />
+        <br />
+        1.請問對於該網站滿意嗎?<br />
         <input type="radio" name="satisfaction" value="非常滿意" id="a01" />
         非常滿意
         <input type="radio" name="satisfaction" value="滿意" id="a02" />
@@ -129,21 +128,29 @@
         <input type="radio" name="satisfaction" value="非常不滿意" id="a04" />
         非常不滿意<br />
         <br />
-        此網站有幫助到您嗎?<br />
+        2.此網站有幫助到您嗎?<br />
         <input type="radio" name="help" value="有" id="e01" />
         有<br />
         <input type="radio" name="help" value="沒有" id="e02" />
         沒有<br />
         <br />
-        此網站有讓您更加了解台灣各地美食嗎?<br />
+       3. 此網站有讓您更加了解台灣各地美食嗎?<br />
         <input type="radio" name="food" value="有" id="f01" />
         有<br />
         <input type="radio" name="food" value="沒有" id="f02" />
         沒有<br />
         <br />
-        您最喜歡網站中哪個城市的在地美食?:<br />
+        4.您最喜歡網站中哪個城市的在地美食?<br />
         <input type="text" id="g01" name="like" value="" /><br />
         <br />
+        5.您覺得此網站所推薦的各地美食是否如同您認為的特色美食?<br />
+        <input type="text" id="g02" name="think" value="" /><br />
+        <br /> 
+        5.對於此網站有甚麼建議呢?<br />
+        <input type="text" id="g03" name="suggest" value="" /><br />
+        <br />
+
+
 
 
 
@@ -153,7 +160,7 @@
     <br />
     <br />
 
-  
+
     <button onclick="myFunction()">savePatientData</button>
 
 </body>
