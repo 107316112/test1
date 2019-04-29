@@ -1,167 +1,69 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-    <title>對此網站的意見調查表(不記名)</title>
-    <script src="HTTP2019.js"></script>
-    <script>
-
-        var obj = JSON.parse('{ "city":"","like":"","think":"","suggest": "","gender": "", "marital":"", "old":"", "satisfaction":"", "help":"", "food":""}');
-        function myFunction() {
-
-            obj.city = document.getElementById("d01").value;
-            obj.like = document.getElementById("g01").value;
-            obj.think = document.getElementById("g02").value;
-            obj.suggest = document.getElementById("g03").value;
-            if (document.getElementById("male").checked == true) {
-                obj.gender = "女";
-            }
-            if (document.getElementById("female").checked == true) {
-                obj.gender = "男";
-            }
-            if (document.getElementById("b01").checked == true) {
-                obj.marital = "是";
-            }
-            if (document.getElementById("b02").checked == true) {
-                obj.marital = "否";
-            }
-            if (document.getElementById("c01").checked == true) {
-                obj.old = "0~10歲";
-            }
-            if (document.getElementById("c02").checked == true) {
-                obj.old = "11~20歲";
-            }
-            if (document.getElementById("c03").checked == true) {
-                obj.old = "21~30歲";
-            }
-            if (document.getElementById("c04").checked == true) {
-                obj.old = "31~40歲";
-            }
-            if (document.getElementById("c05").checked == true) {
-                obj.old = "41~450歲";
-            }
-            if (document.getElementById("c06").checked == true) {
-                obj.old = "51~60歲";
-            }
-            if (document.getElementById("c07").checked == true) {
-                obj.old = "61~70歲";
-            }
-            if (document.getElementById("c08").checked == true) {
-                obj.old = "70歲以上";
-            }
-            if (document.getElementById("a01").checked == true) {
-                obj.satisfaction = "非常滿意";
-            }
-            if (document.getElementById("a02").checked == true) {
-                obj.satisfaction = "滿意";
-            }
-            if (document.getElementById("a03").checked == true) {
-                obj.satisfaction = "不滿意";
-            }
-            if (document.getElementById("a04").checked == true) {
-                obj.satisfaction = "非常不滿意";
-            }
-            if (document.getElementById("e01").checked == true) {
-                obj.help = "有";
-            }
-            if (document.getElementById("e02").checked == true) {
-                obj.help = "沒有";
-            }
-            if (document.getElementById("f01").checked == true) {
-                obj.food = "有";
-            }
-            if (document.getElementById("f02").checked == true) {
-                obj.food = "沒有";
-            }
-            var myJSONstr = JSON.stringify(obj);
-            //alert(myJSONstr);
-            //var encodedData = btoa(myJSONstr);
-            HTTPPostData("Post.aspx?id=newPatient", myJSONstr);
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
         }
-    </script>
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+            .navbar a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+                .navbar a:hover {
+                    background: #ddd;
+                    color: black;
+                }
+
+        .main {
+            padding: 16px;
+            margin-top: 30px;
+            height: 1500px; /* Used in this example to enable scrolling */
+        }
+    </style>
 </head>
-<body>
-    <fieldset>
-        <legend>對此網站的意見調查表(不記名)</legend>
 
-        性別:<br />
-        <input type="radio" name="gender" value="女" id="male" />
-        女
-        <input type="radio" name="gender" value="男" id="female" />
-        男<br />
-        <br />
-        婚姻:<br />
-        <input type="radio" name="marital" value="是" id="b01" />
-        是
-        <input type="radio" name="marital" value="否" id="b02" />
-        否<br />
-        <br />
-        居住城市:<br />
-        <input type="text" id="d01" name="city" value="" /><br />
-        <br />
-        年齡層:<br />
-        <input type="radio" name="old" value="0~10歲" id="c01" />
-        0~10歲
-        <input type="radio" name="old" value="11~20歲" id="c02" />
-        11~20歲<br />
-        <input type="radio" name="old" value="21~30歲" id="c03" />
-        21~30歲
-        <input type="radio" name="old" value="31~40歲" id="c04" />
-        31~40歲<br />
-        <input type="radio" name="old" value="41~50歲" id="c05" />
-        41~50歲
-        <input type="radio" name="old" value="51~60歲" id="c06" />
-        51~60歲<br />
-        <input type="radio" name="old" value="61~70歲" id="c07" />
-        61~70歲
-        <input type="radio" name="old" value="70歲以上" id="c08" />
-        70歲以上<br />
-        <br />
-        1.請問對於該網站滿意嗎?<br />
-        <input type="radio" name="satisfaction" value="非常滿意" id="a01" />
-        非常滿意
-        <input type="radio" name="satisfaction" value="滿意" id="a02" />
-        滿意<br />
-        <input type="radio" name="satisfaction" value="不滿意" id="a03" />
-        不滿意
-        <input type="radio" name="satisfaction" value="非常不滿意" id="a04" />
-        非常不滿意<br />
-        <br />
-        2.此網站有幫助到您嗎?<br />
-        <input type="radio" name="help" value="有" id="e01" />
-        有<br />
-        <input type="radio" name="help" value="沒有" id="e02" />
-        沒有<br />
-        <br />
-       3. 此網站有讓您更加了解台灣各地美食嗎?<br />
-        <input type="radio" name="food" value="有" id="f01" />
-        有<br />
-        <input type="radio" name="food" value="沒有" id="f02" />
-        沒有<br />
-        <br />
-        4.您最喜歡網站中哪個城市的在地美食?<br />
-        <input type="text" id="g01" name="like" value="" /><br />
-        <br />
-        5.您覺得此網站所推薦的各地美食是否如同您認為的特色美食?<br />
-        <input type="text" id="g02" name="think" value="" /><br />
-        <br /> 
-        5.對於此網站有甚麼建議呢?<br />
-        <input type="text" id="g03" name="suggest" value="" /><br />
-        <br />
+<script>
+ function loadHTML(pageName)
+     {
+             var str;
+			 str = "<object type='text/html' width='100%' height='100%' data='";
+			 str = str + pageName;
+			 str = str + "' ></object>";
+		      document.getElementById("content").innerHTML= str;
+			//  document.getElementById("content").innerHTML='<object type="text/html" width="100%" height="100%" data="newPatient.html" ></object>';
+   }
+
+</script>
+<body onload="loadHTML('newPatient.html')">
+
+    <div class="navbar">
+        <a href="#" onclick="loadHTML('newPatient.html')">問卷調查表單</a>
+        <a href="#" onclick="loadHTML('getData.html')">取得的結果</a>
+        <a href="#" onclick="loadHTML('getData2Table.html')">取得的結果,並在table呈現</a>
 
 
+    </div>
 
+    <div id="content" class="main">
 
-
-
-
-    </fieldset>
-    <br />
-    <br />
-
-
-    <button onclick="myFunction()">savePatientData</button>
+    </div>
 
 </body>
 </html>
+
